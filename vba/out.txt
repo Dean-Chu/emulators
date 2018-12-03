@@ -1,0 +1,46 @@
+g++ -I/usr//include -O2 -DC_CORE -DFINAL_VERSION -DSDL -D_OPENDINGUX_ -D_VIDOD32_ -fpermissive -fomit-frame-pointer -ffunction-sections -ffast-math -fsingle-precision-constant -fsigned-char   -c -o globs_od.o ./opendingux/globs_od.cpp
+./opendingux/globs_od.cpp: In function ‘void systemUpdateSolarSensor()’:
+./opendingux/globs_od.cpp:456:17: error: ‘time’ was not declared in this scope
+  time(&long_time); // Get time as long integer.
+                 ^
+./opendingux/globs_od.cpp:457:32: error: ‘localtime’ was not declared in this scope
+  newtime = localtime(&long_time); // Convert to local time.
+                                ^
+./opendingux/globs_od.cpp:458:13: error: invalid use of incomplete type ‘struct systemUpdateSolarSensor()::tm’
+  if (newtime->tm_hour > 21 || newtime->tm_hour < 5)
+             ^~
+./opendingux/globs_od.cpp:452:9: note: forward declaration of ‘struct systemUpdateSolarSensor()::tm’
+  struct tm *newtime;
+         ^~
+./opendingux/globs_od.cpp:458:38: error: invalid use of incomplete type ‘struct systemUpdateSolarSensor()::tm’
+  if (newtime->tm_hour > 21 || newtime->tm_hour < 5)
+                                      ^~
+./opendingux/globs_od.cpp:452:9: note: forward declaration of ‘struct systemUpdateSolarSensor()::tm’
+  struct tm *newtime;
+         ^~
+./opendingux/globs_od.cpp:462:18: error: invalid use of incomplete type ‘struct systemUpdateSolarSensor()::tm’
+  else if (newtime->tm_hour > 20 || newtime->tm_hour < 6)
+                  ^~
+./opendingux/globs_od.cpp:452:9: note: forward declaration of ‘struct systemUpdateSolarSensor()::tm’
+  struct tm *newtime;
+         ^~
+./opendingux/globs_od.cpp:462:43: error: invalid use of incomplete type ‘struct systemUpdateSolarSensor()::tm’
+  else if (newtime->tm_hour > 20 || newtime->tm_hour < 6)
+                                           ^~
+./opendingux/globs_od.cpp:452:9: note: forward declaration of ‘struct systemUpdateSolarSensor()::tm’
+  struct tm *newtime;
+         ^~
+./opendingux/globs_od.cpp:466:18: error: invalid use of incomplete type ‘struct systemUpdateSolarSensor()::tm’
+  else if (newtime->tm_hour > 18 || newtime->tm_hour < 7)
+                  ^~
+./opendingux/globs_od.cpp:452:9: note: forward declaration of ‘struct systemUpdateSolarSensor()::tm’
+  struct tm *newtime;
+         ^~
+./opendingux/globs_od.cpp:466:43: error: invalid use of incomplete type ‘struct systemUpdateSolarSensor()::tm’
+  else if (newtime->tm_hour > 18 || newtime->tm_hour < 7)
+                                           ^~
+./opendingux/globs_od.cpp:452:9: note: forward declaration of ‘struct systemUpdateSolarSensor()::tm’
+  struct tm *newtime;
+         ^~
+makefile:72: recipe for target 'globs_od.o' failed
+make: *** [globs_od.o] Error 1
